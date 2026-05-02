@@ -1,0 +1,26 @@
+﻿@model BorderCrossInfo.Models.GranicniPrelaz
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>@Model.Naziv (@Model.Drzava)</h2>
+            <hr />
+            <p><strong>Tip saobraćaja:</strong> @Model.TipVozila</p>
+            <p>
+                <strong>Trenutno zadržavanje:</strong>
+                <span class="badge badge-@Model.GetStatusColor()">@Model.VremeCekanjaMinuta min</span>
+            </p>
+            <p><strong>Zadnje osvežavanje:</strong> @Model.PoslednjeAzuriranje.ToString("dd.MM.yyyy HH:mm")</p>
+            <a href="@Url.Action("Index")" class="btn btn-secondary">Nazad na listu</a>
+        </div>
+
+        <div class="col-12">
+            <h4>Lokacija na mapi:</h4>
+            <div class="embed-responsive embed-responsive-16by9 border rounded shadow">
+                <iframe class="embed-responsive-item"
+                        src="https://www.google.com/maps?q=@Model.Naziv+@Model.Drzava+Border+Crossing&output=embed">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>

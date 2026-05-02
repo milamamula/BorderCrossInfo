@@ -1,0 +1,66 @@
+﻿@model BorderCrossInfo.Models.Korisnik
+
+@{
+    ViewBag.Title = "Registracija";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+
+            <div class="card p-4 shadow-sm">
+                <div class="text-center mb-4">
+                    <i class="fas fa-user-plus fa-2x mb-2" style="color: var(--gold);"></i>
+                    <h3 class="font-weight-bold">Kreiraj nalog</h3>
+                </div>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="form-group mb-3">
+                        @Html.LabelFor(model => model.KorisnickoIme, htmlAttributes: new { @class = "font-weight-bold" })
+                        @Html.EditorFor(model => model.KorisnickoIme, new { htmlAttributes = new { @class = "form-control", placeholder = "Unesi korisničko ime..." } })
+                        @Html.ValidationMessageFor(model => model.KorisnickoIme, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group mb-3">
+                        @Html.LabelFor(model => model.Lozinka, htmlAttributes: new { @class = "font-weight-bold" })
+                        @Html.EditorFor(model => model.Lozinka, new { htmlAttributes = new { @class = "form-control", type = "password", placeholder = "Unesi lozinku..." } })
+                        @Html.ValidationMessageFor(model => model.Lozinka, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group mb-3">
+                        @Html.LabelFor(model => model.PotvrdaLozinke, htmlAttributes: new { @class = "font-weight-bold" })
+                        @Html.EditorFor(model => model.PotvrdaLozinke, new { htmlAttributes = new { @class = "form-control", type = "password", placeholder = "Ponovi lozinku..." } })
+                        @Html.ValidationMessageFor(model => model.PotvrdaLozinke, "", new { @class = "text-danger" })
+                    </div>
+
+                    @Html.HiddenFor(model => model.Uloga, new { Value = "Korisnik" })
+
+                    <div class="form-group mt-4 text-center">
+                        <button type="submit" class="btn btn-success btn-lg px-5">
+                            <i class="fas fa-user-plus"></i> Registruj se
+                        </button>
+                    </div>
+                }
+
+                <hr class="my-4">
+                <div class="text-center">
+                    <p class="mb-0">
+                        Već imaš nalog?
+                        <a href="@Url.Action("Login")" class="font-weight-bold" style="color: var(--pastel-blue);">
+                            Prijavi se ovde
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

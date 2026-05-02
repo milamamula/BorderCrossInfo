@@ -1,0 +1,57 @@
+﻿@model BorderCrossInfo.Models.GranicniPrelaz
+
+@{
+    ViewBag.Title = "Izmeni prelaz";
+}
+
+<div class="container mt-4">
+    <h2>Izmena podataka: @Model.Naziv</h2>
+    <hr />
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.Id) 
+
+        <div class="form-horizontal card p-4 shadow-sm border-primary">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Naziv)
+                @Html.EditorFor(model => model.Naziv, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Naziv, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Drzava)
+                @Html.EditorFor(model => model.Drzava, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Drzava, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.VremeCekanjaMinuta)
+                        @Html.EditorFor(model => model.VremeCekanjaMinuta, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.VremeCekanjaMinuta, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Tip vozila</label>
+                        @Html.DropDownListFor(model => model.TipVozila, new SelectList(new[] { "Putnički", "Teretni", "Autobusi" }), new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group mt-3">
+                <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Sačuvaj izmene</button>
+                @Html.ActionLink("Odustani", "Index", null, new { @class = "btn btn-secondary ml-2" })
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

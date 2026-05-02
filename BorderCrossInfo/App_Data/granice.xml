@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GranicniPrelazi>
+  <Prelaz>
+    <Id>1</Id>
+    <Naziv>Horgoš</Naziv>
+    <Drzava>Mađarska</Drzava>
+    <VremeCekanjaMinuta>35</VremeCekanjaMinuta>
+    <TipVozila>Putnički</TipVozila>
+    <PoslednjeAzuriranje>2026-05-01T16:47:37</PoslednjeAzuriranje>
+  </Prelaz>
+  <Prelaz>
+    <Id>2</Id>
+    <Naziv>Preševo</Naziv>
+    <Drzava>Makedonija</Drzava>
+    <VremeCekanjaMinuta>20</VremeCekanjaMinuta>
+    <TipVozila>Autobusi</TipVozila>
+    <PoslednjeAzuriranje>2026-05-01T17:06:06</PoslednjeAzuriranje>
+  </Prelaz>
+  <Prelaz>
+    <Id>3</Id>
+    <Naziv>Đala</Naziv>
+    <Drzava>Mađarska</Drzava>
+    <VremeCekanjaMinuta>50</VremeCekanjaMinuta>
+    <TipVozila>Putnički</TipVozila>
+    <PoslednjeAzuriranje>2026-05-02T20:35:29</PoslednjeAzuriranje>
+  </Prelaz>
+  <Prelaz>
+    <Id>4</Id>
+    <Naziv>Kelebija</Naziv>
+    <Drzava>Mađarska</Drzava>
+    <VremeCekanjaMinuta>15</VremeCekanjaMinuta>
+    <TipVozila>Putnički</TipVozila>
+    <PoslednjeAzuriranje>2026-05-01T20:18:56</PoslednjeAzuriranje>
+  </Prelaz>
+  <Prelaz>
+    <Id>5</Id>
+    <Naziv>Jabuka</Naziv>
+    <Drzava>Crna Gora</Drzava>
+    <VremeCekanjaMinuta>10</VremeCekanjaMinuta>
+    <TipVozila>Putnički</TipVozila>
+    <PoslednjeAzuriranje>2026-05-01T20:19:18</PoslednjeAzuriranje>
+  </Prelaz>
+  <Prelaz>
+    <Id>6</Id>
+    <Naziv>Batrovci</Naziv>
+    <Drzava>Hrvatska</Drzava>
+    <VremeCekanjaMinuta>90</VremeCekanjaMinuta>
+    <TipVozila>Autobusi</TipVozila>
+    <PoslednjeAzuriranje>2026-05-02T19:52:46</PoslednjeAzuriranje>
+  </Prelaz>
+  <Prelaz>
+    <Id>7</Id>
+    <Naziv>Šid</Naziv>
+    <Drzava>Hrvatska</Drzava>
+    <VremeCekanjaMinuta>45</VremeCekanjaMinuta>
+    <TipVozila>Teretni</TipVozila>
+    <PoslednjeAzuriranje>2026-05-01T20:19:56</PoslednjeAzuriranje>
+  </Prelaz>
+  <Prelaz>
+    <Id>8</Id>
+    <Naziv>Vatin</Naziv>
+    <Drzava>Rumunija</Drzava>
+    <VremeCekanjaMinuta>12</VremeCekanjaMinuta>
+    <TipVozila>Putnički</TipVozila>
+    <PoslednjeAzuriranje>2026-05-01T20:20:15</PoslednjeAzuriranje>
+  </Prelaz>
+  <Prelaz>
+    <Id>9</Id>
+    <Naziv>Kotroman</Naziv>
+    <Drzava>Bosna i Hercegovina</Drzava>
+    <VremeCekanjaMinuta>50</VremeCekanjaMinuta>
+    <TipVozila>Autobusi</TipVozila>
+    <PoslednjeAzuriranje>2026-05-01T20:20:53</PoslednjeAzuriranje>
+  </Prelaz>
+  <Prelaz>
+    <Id>10</Id>
+    <Naziv>Mali Zvornik</Naziv>
+    <Drzava>Bosna i Hercegovina</Drzava>
+    <VremeCekanjaMinuta>120</VremeCekanjaMinuta>
+    <TipVozila>Teretni</TipVozila>
+    <PoslednjeAzuriranje>2026-05-01T20:21:18</PoslednjeAzuriranje>
+  </Prelaz>
+  <Prelaz>
+    <Id>11</Id>
+    <Naziv>Gradina</Naziv>
+    <Drzava>Bugarska</Drzava>
+    <VremeCekanjaMinuta>18</VremeCekanjaMinuta>
+    <TipVozila>Putnički</TipVozila>
+    <PoslednjeAzuriranje>2026-05-01T20:21:38</PoslednjeAzuriranje>
+  </Prelaz>
+  <Prelaz>
+    <Id>12</Id>
+    <Naziv>Vrška Čuka</Naziv>
+    <Drzava>Bugarska</Drzava>
+    <VremeCekanjaMinuta>2</VremeCekanjaMinuta>
+    <TipVozila>Putnički</TipVozila>
+    <PoslednjeAzuriranje>2026-05-01T20:22:02</PoslednjeAzuriranje>
+  </Prelaz>
+  <Prelaz>
+    <Id>13</Id>
+    <Naziv>Trbušnica</Naziv>
+    <Drzava>Bosna i Hercegovina</Drzava>
+    <VremeCekanjaMinuta>89</VremeCekanjaMinuta>
+    <TipVozila>Teretni</TipVozila>
+    <PoslednjeAzuriranje>2026-05-01T20:22:26</PoslednjeAzuriranje>
+  </Prelaz>
+  <Prelaz>
+    <Id>14</Id>
+    <Naziv>Sremska Rača</Naziv>
+    <Drzava>Bosna i Hercegovina</Drzava>
+    <VremeCekanjaMinuta>10</VremeCekanjaMinuta>
+    <TipVozila>Putnički</TipVozila>
+    <PoslednjeAzuriranje>2026-05-01T20:24:18</PoslednjeAzuriranje>
+  </Prelaz>
+  <Prelaz>
+    <Id>15</Id>
+    <Naziv>Gostun</Naziv>
+    <Drzava>Crna Gora</Drzava>
+    <VremeCekanjaMinuta>8</VremeCekanjaMinuta>
+    <TipVozila>Putnički</TipVozila>
+    <PoslednjeAzuriranje>2026-05-01T20:25:09</PoslednjeAzuriranje>
+  </Prelaz>
+  <Prelaz>
+    <Id>16</Id>
+    <Naziv>Špiljani</Naziv>
+    <Drzava>Crna Gora</Drzava>
+    <VremeCekanjaMinuta>5</VremeCekanjaMinuta>
+    <TipVozila>Putnički</TipVozila>
+    <PoslednjeAzuriranje>2026-05-01T20:25:25</PoslednjeAzuriranje>
+  </Prelaz>
+</GranicniPrelazi>

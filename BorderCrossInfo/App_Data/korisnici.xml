@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Korisnici>
+  <Korisnik>
+    <Id>1</Id>
+    <KorisnickoIme>admin</KorisnickoIme>
+    <Lozinka>123456</Lozinka>
+    <Uloga>Admin</Uloga>
+  </Korisnik>
+  <Korisnik>
+    <Id>2</Id>
+    <KorisnickoIme>mila</KorisnickoIme>
+    <Lozinka>mila28</Lozinka>
+    <Uloga>Admin</Uloga>
+  </Korisnik>
+  <Korisnik>
+    <Id>3</Id>
+    <KorisnickoIme>blabla</KorisnickoIme>
+    <Lozinka>123456</Lozinka>
+    <Uloga>Admin</Uloga>
+  </Korisnik>
+</Korisnici>

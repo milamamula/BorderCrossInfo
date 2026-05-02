@@ -1,0 +1,16 @@
+﻿@model Dictionary<string, int>
+<h2>Statistički pregled granica</h2>
+<div class="row mt-4">
+    <div class="col-md-4">
+        <div class="card bg-info text-white p-3 text-center">
+            <h3>@ViewBag.Ukupno</h3>
+            <p>Ukupno prelaza</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card bg-warning text-dark p-3 text-center">
+            <h3>@string.Format("{0:F1}", ViewBag.Prosek) min</h3>
+            <p>Prosečno čekanje</p>
+        </div>
+    </div>
+</div>

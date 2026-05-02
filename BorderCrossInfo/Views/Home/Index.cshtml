@@ -1,0 +1,79 @@
+﻿@model IEnumerable<BorderCrossInfo.Models.GranicniPrelaz>
+@{
+    ViewBag.Title = "Početna - BorderCrossInfo";
+}
+
+<div class="hero-section">
+    <div class="container text-center">
+        <h1 class="display-3 font-weight-bold mb-3">BorderCross<span class="text-gold">Info</span></h1>
+        <p class="lead mb-5">Vaš digitalni saputnik za pametno prelaženje granica.</p>
+        <a class="btn btn-gold btn-lg px-5 py-3 shadow" href="@Url.Action("Index", "Katalog")">
+            <i class="fas fa-search-location"></i> PRETRAŽI SVE PRELAZE
+        </a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row text-center mb-5">
+        <div class="col-12">
+            <h2 class="section-title">
+                <i class="fas fa-bolt"></i> Kritične tačke zadržavanja
+            </h2>
+        </div>
+    </div>
+
+    <div class="row">
+        @if (!Model.Any())
+        {
+            <div class="col-12 text-center py-5">
+                <p>Svi putevi su čisti. Trenutno nema značajnih zastoja.</p>
+            </div>
+        }
+        else
+        {
+            foreach (var prelaz in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card border-card shadow-sm mb-4">
+                        <div class="card-header border-0 bg-@prelaz.GetStatusColor()">
+                            <h5 class="my-0 header-title font-weight-bold text-center uppercase">@prelaz.Naziv</h5>
+                        </div>
+                        <div class="card-body text-dark text-center">
+                            <span class="country-label">DRŽAVA: @prelaz.Drzava</span>
+
+                            <div class="card-wait-time">
+                                @prelaz.VremeCekanjaMinuta <small>min</small>
+                            </div>
+
+                            <p class="type-badge">@prelaz.TipVozila</p>
+
+                            <hr>
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small>
+                                    <i class="far fa-clock"></i>
+                                    @prelaz.PoslednjeAzuriranje.ToString("HH:mm")
+                                </small>
+                                <a href="@Url.Action("Details", "Katalog", new { id = prelaz.Id })" class="btn btn-sm btn-link">
+                                    Detalji →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+<footer class="full-width-footer">
+    <div class="container text-center">
+        <div class="quote-box">
+            <i class="fas fa-quote-left mb-3"></i>
+            <p class="h5 font-italic leading-relaxed">
+                Planirajte svoj put pametno. Podaci se osvežavaju na svakih 15 minuta direktno sa zvaničnih XML izvora granične policije.
+            </p>
+            <p class="mt-4 mb-0 small opacity-75">&copy; @DateTime.Now.Year - BorderCrossInfo</p>
+        </div>
+    </div>
+</footer>

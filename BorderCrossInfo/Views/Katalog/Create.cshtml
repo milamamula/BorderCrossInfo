@@ -1,0 +1,62 @@
+﻿@model BorderCrossInfo.Models.GranicniPrelaz
+
+@{
+    ViewBag.Title = "Dodaj novi prelaz";
+}
+
+<div class="container mt-4">
+    <h2 class="text-center">Novi granični prelaz</h2>
+    <hr />
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+
+                <div class="card p-4 shadow-sm">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="form-group mb-3">
+                        @Html.LabelFor(model => model.Naziv, htmlAttributes: new { @class = "control-label font-weight-bold" })
+                        @Html.EditorFor(model => model.Naziv, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Naziv, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group mb-3">
+                        @Html.LabelFor(model => model.Drzava, htmlAttributes: new { @class = "control-label font-weight-bold" })
+                        @Html.EditorFor(model => model.Drzava, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Drzava, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group mb-3">
+                        @Html.LabelFor(model => model.VremeCekanjaMinuta, htmlAttributes: new { @class = "control-label font-weight-bold" })
+                        @Html.EditorFor(model => model.VremeCekanjaMinuta, new { htmlAttributes = new { @class = "form-control", type = "number" } })
+                        @Html.ValidationMessageFor(model => model.VremeCekanjaMinuta, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group mb-3">
+                        @Html.LabelFor(model => model.TipVozila, htmlAttributes: new { @class = "control-label font-weight-bold" })
+                        @Html.DropDownListFor(model => model.TipVozila, new SelectList(new[] { "Putnički", "Teretni", "Autobusi" }), "-- Odaberi tip --", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.TipVozila, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group mt-4 text-center">
+                        <button type="submit" class="btn btn-success btn-lg px-4">
+                            <i class="fas fa-save"></i> Sačuvaj prelaz
+                        </button>
+                        <div class="mt-2">
+                            @Html.ActionLink("← Nazad na listu", "Index", null, new { @class = "btn btn-outline-secondary" })
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

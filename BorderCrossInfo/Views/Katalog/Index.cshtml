@@ -1,0 +1,113 @@
+﻿@model IEnumerable<BorderCrossInfo.Models.GranicniPrelaz>
+
+@{
+    ViewBag.Title = "Katalog graničnih prelaza";
+}
+<div class="container mt-5">
+    <h2>Svi granični prelazi</h2>
+
+    @using (Html.BeginForm("Index", "Katalog", FormMethod.Get, new { @class = "form-inline mb-4" }))
+    {
+        <div class="form-group mr-3">
+            @Html.TextBox("searchString", null, new { @class = "form-control", placeholder = "Pretraži po nazivu..." })
+        </div>
+
+        <div class="form-group mr-3">
+            @Html.DropDownList("drzavaFilter", (SelectList)ViewBag.Drzave, "Sve države", new { @class = "form-control" })
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            <i class="fas fa-search"></i> Primeni
+        </button>
+        <a href="@Url.Action("Index")" class="btn btn-secondary ml-2">Poništi</a>
+    }
+
+    <div class="row mb-3 mt-3">
+        <div class="col-md-12">
+            <a href="@Url.Action("Create", "Katalog")" class="btn btn-success">
+                <i class="fas fa-plus"></i> Dodaj novi prelaz
+            </a>
+        </div>
+    </div>
+    <style>
+        .custom-table thead th, .custom-table thead th a {
+            color: #ffffff !important;
+            text-decoration: none !important;
+            background-color: #343a40; 
+        }
+
+        .custom-table tbody td {
+            color: #212529 !important; 
+            vertical-align: middle;
+        }
+
+        .badge-text-fix {
+            font-weight: bold;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+        }
+    </style>
+
+    <table class="table table-hover mt-3 custom-table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.ActionLink("Naziv prelaza", "Index", new { sortOrder = ViewBag.NameSortParm })
+                </th>
+                <th>Država</th>
+                <th>
+                    @Html.ActionLink("Čekanje (min)", "Index", new { sortOrder = ViewBag.TimeSortParm })
+                </th>
+                <th>Tip vozila</th>
+                <th>Poslednje ažuriranje</th>
+                <th class="text-center">Akcije</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td><strong>@item.Naziv</strong></td>
+                    <td>@item.Drzava</td>
+                    <td>
+                        @{
+                            string bColor = item.GetStatusColor();
+                            string tColor = (bColor == "warning") ? "black" : "white";
+                        }
+                        <span class="badge badge-@bColor badge-text-fix"
+                              style="font-size: 1.1em; padding: 8px 12px; color: @tColor !important;">
+                            @item.VremeCekanjaMinuta min
+                        </span>
+                    </td>
+                    <td>@item.TipVozila</td>
+                    <td>@item.PoslednjeAzuriranje.ToString("HH:mm")</td>
+                    <td class="text-center">
+                        <div class="btn-group">
+                            <a href="@Url.Action("Edit", new { id = item.Id })" class="btn btn-warning btn-sm" title="Izmeni">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a href="@Url.Action("Details", "Katalog", new { id = item.Id })"
+                               class="btn btn-info btn-sm" title="Detalji">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <a href="@Url.Action("Delete", new { id = item.Id })"
+                               class="btn btn-danger btn-sm"
+                               onclick="return confirm('Sigurno brisanje?');" title="Obriši">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="mt-4 p-3 border rounded bg-light">
+        <h5><i class="fas fa-file-download"></i> Eksportuj podatke:</h5>
+        <a href="@Url.Action("ExportJson")" class="btn btn-outline-dark btn-sm" target="_blank">
+            <i class="fas fa-code"></i> Preuzmi JSON
+        </a>
+        <a href="@Url.Action("ExportXml")" class="btn btn-outline-info btn-sm">
+            <i class="fas fa-file-code"></i> Preuzmi XML
+        </a>
+    </div>
+    </div>
